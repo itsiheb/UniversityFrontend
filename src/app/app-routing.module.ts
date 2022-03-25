@@ -1,3 +1,4 @@
+import { ClassesComponent } from './modules/classes/classes.component';
 import { InstructorTimetablesComponent } from './modules/instructor-timetables/instructor-timetables.component';
 import { StudentTimetablesComponent } from './modules/student-timetables/student-timetables.component';
 import { OnlineSessionsComponent } from './modules/online-sessions/online-sessions.component';
@@ -18,6 +19,8 @@ const routes: Routes = [{
       component: DashboardComponent},
       {path: 'courses',
       component: CoursesComponent},
+      {path: 'classes',
+      component: ClassesComponent},
       {path: 'students',
       component: StudentsComponent},
       {path: 'instructors',
@@ -29,9 +32,10 @@ const routes: Routes = [{
       {path: 'student-timetables',
       component: StudentTimetablesComponent},
       {path: 'instructor-timetables',
-      component: InstructorTimetablesComponent},
+      component: InstructorTimetablesComponent}
 ],
-},];
+}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

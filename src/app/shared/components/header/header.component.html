@@ -1,6 +1,6 @@
 <mat-toolbar color="secondary">
     <mat-toolbar-row>
-        <button mat-icon-button >
+        <button mat-icon-button (click)="toggleSideBar()">
             <mat-icon>menu</mat-icon>
         </button>
 
@@ -13,11 +13,7 @@
                         <mat-icon>settings</mat-icon>
                     </button>
                 </li>
-                <li>
-                    <button mat-icon-button>
-                        <mat-icon>help_outline</mat-icon>
-                    </button>
-                </li>
+               
                 <li>
                     <button mat-button [matMenuTriggerFor]="menu">
                         <mat-icon>person_outline</mat-icon>

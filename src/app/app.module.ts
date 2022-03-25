@@ -1,3 +1,4 @@
+import { AreaComponent } from './shared/widgets/area/area.component';
 import { RouterModule } from '@angular/router';
 import { DefaultModule } from './layouts/default/default.module';
 import { NgModule } from '@angular/core';
@@ -13,8 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
-   
-
+    
   ],
   imports: [
     BrowserModule,
