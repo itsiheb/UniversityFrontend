@@ -1,0 +1,54 @@
+:root {
+  --button-color: black;
+  --button-background-color: silver;
+}
+h3{
+    color: black;
+}
+
+#add-success-alert,
+#update-success-alert,
+#delete-success-alert {
+  display: none;
+}
+
+#add-success-alert,
+#update-success-alert,
+#delete-success-alert {
+  animation-name: fadeInAndOut;
+  animation-duration: 3s;
+}
+
+@-webkit-keyframes fadeInAndOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInAndOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+  
+}
+.custom-add-btn {
+    background-color: #4572d3;
+    color: rgb(255, 255, 255);
+    &:hover {
+      background-color: #365aa8;
+    }
+  }
+
+

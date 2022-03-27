@@ -6,13 +6,23 @@
 
 mat-drawer {
     width:350px;
+    background-color: #0d6efd;
+    color: black;
+    mat-list-item{
+        color: black;
+    }
 }
 
 mat-drawer-container{
     height: 100%;
-    background-color: rgb(112, 109, 109);
+    background-color: rgb(201, 202, 219);
+    color: rgb(245, 239, 239);
 }
 
 mat-drawer-content {
+    background-color:rgb(255, 255, 255);
+    color: rgb(5, 0, 0);
     padding: 20px;
   }
+
+ 

@@ -1,3 +1,5 @@
+import { AddCourseComponent } from './../../modules/courses/add-course/add-course.component';
+import { DashboardService } from './../../modules/dashboard.service';
 import { SharedModule } from './../../shared/shared.module';
 import { CoursesComponent } from './../../modules/courses/courses.component';
 import { RouterModule } from '@angular/router';
@@ -18,6 +20,8 @@ import { DocumentsComponent } from 'src/app/modules/documents/documents.componen
 import { InstructorTimetablesComponent } from 'src/app/modules/instructor-timetables/instructor-timetables.component';
 import { StudentTimetablesComponent } from 'src/app/modules/student-timetables/student-timetables.component';
 import { OnlineSessionsComponent } from 'src/app/modules/online-sessions/online-sessions.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -33,6 +37,7 @@ import { OnlineSessionsComponent } from 'src/app/modules/online-sessions/online-
     InstructorTimetablesComponent,
     StudentTimetablesComponent,
     OnlineSessionsComponent,
+    AddCourseComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +48,12 @@ import { OnlineSessionsComponent } from 'src/app/modules/online-sessions/online-
     FlexLayoutModule,
     MatCardModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule,
+    FormsModule,
+  ],
+  providers: [
+    DashboardService
   ]
 })
 export class DefaultModule { }
