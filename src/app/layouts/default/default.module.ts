@@ -1,3 +1,4 @@
+import { AddClassComponent } from './../../modules/classes/add-class/add-class.component';
 import { AddCourseComponent } from './../../modules/courses/add-course/add-course.component';
 import { DashboardService } from './../../modules/dashboard.service';
 import { SharedModule } from './../../shared/shared.module';
@@ -22,6 +23,12 @@ import { StudentTimetablesComponent } from 'src/app/modules/student-timetables/s
 import { OnlineSessionsComponent } from 'src/app/modules/online-sessions/online-sessions.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AddDocumentComponent } from 'src/app/modules/documents/add-document/add-document.component';
+import { AddInstructorComponent } from 'src/app/modules/instructors/add-instructor/add-instructor.component';
+import { AddInstructorTimetableComponent } from 'src/app/modules/instructor-timetables/add-instructor-timetable/add-instructor-timetable.component';
+import { AddOnlineSessionComponent } from 'src/app/modules/online-sessions/add-online-session/add-online-session.component';
+import { AddStudentComponent } from 'src/app/modules/students/add-student/add-student.component';
+import { AddStudentTimetableComponent } from 'src/app/modules/student-timetables/add-student-timetable/add-student-timetable.component';
 
 
 
@@ -37,7 +44,14 @@ import { FormsModule } from '@angular/forms';
     InstructorTimetablesComponent,
     StudentTimetablesComponent,
     OnlineSessionsComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    AddClassComponent,
+    AddDocumentComponent,
+    AddInstructorTimetableComponent,
+    AddInstructorComponent,
+    AddOnlineSessionComponent,
+    AddStudentTimetableComponent,
+    AddStudentComponent,
   ],
   imports: [
     CommonModule,

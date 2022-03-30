@@ -1,0 +1,20 @@
+<form>
+    <div class="mb-3">
+        <label for="name" class="form-label">Class Name</label>
+        <input type="text" class="form-control" [(ngModel)]="name" name="name">
+    </div>
+ 
+    <div class="mb-3">
+       <label for="classEmail" class="form-label">Class Email</label>
+       <input type="text" class="form-control" [(ngModel)]="classEmail" name="classEmail">
+   </div>
+ 
+    <button (click)="addClass()" *ngIf="aclass.id==0" class="btn btn-primary  float-right">
+        Add
+    </button>
+ 
+    <button (click)="updateClass()" *ngIf="aclass.id!=0" class="btn btn-primary">
+        Update
+    </button>
+    
+ </form>

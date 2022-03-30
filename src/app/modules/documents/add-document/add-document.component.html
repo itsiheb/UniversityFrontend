@@ -1,0 +1,15 @@
+<form>
+    <div class="mb-3">
+        <label for="description" class="form-label">Document Name</label>
+        <input type="text" class="form-control" [(ngModel)]="description" name="description">
+    </div>
+ 
+    <button (click)="addDocument()" *ngIf="adocument.id==0" class="btn btn-primary  float-right">
+        Add
+    </button>
+ 
+    <button (click)="updateDocument()" *ngIf="adocument.id!=0" class="btn btn-primary">
+        Update
+    </button>
+    
+ </form>

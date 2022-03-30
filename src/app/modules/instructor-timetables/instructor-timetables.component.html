@@ -1,1 +1,93 @@
-<p>instructor-timetables works!</p>
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">{{modalTitle}}</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                   (click)="modalClose()" id="add-edit-modal-close"></button>
+              </div>
+              <div class="modal-body">
+                  <app-add-instructor-timetable [iTT]="iTT" *ngIf="activateAddEditITTComponent">
+                  </app-add-instructor-timetable>
+              </div>
+          </div>
+      </div>
+      </div>
+      
+      <!--end  Modal -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h3 class="h2 mb-0 text-gray-800">&nbsp;&nbsp;Manage Instructors TimeTables </h3>
+        </div>
+
+            <div class="card">
+         
+              <div>
+                <div class="alert alert-success" role="alert" id="delete-success-alert">
+                    Instructor TimeTable successfully deleted!
+              </div>
+
+             <div class="alert alert-success" role="alert" id="add-success-alert">
+                Instructor TimeTable successfully added!
+             </div>
+             
+             <div class="alert alert-success" role="alert" id="update-success-alert">
+                Instructor TimeTable successfully updated!
+             </div>
+             
+            
+            </div>
+           
+             </div>
+            <div class="card-header">
+              <button type="button" class="btn-sm btn-primary float-left" (click)="modalAdd()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Add Instructor TimeTable
+              </button>
+             </div>
+    
+           
+             
+           
+    
+            <div class="card-body">
+        <table class="table  table-striped " id="Student TimeTable">
+      <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">duration in hours</th>
+            
+      
+          <th scope="col">Actions</th>
+         
+    
+         
+          
+        </tr>
+      </thead>
+      <tbody>
+       
+        <tr *ngFor="let iTT of instructortimetables_table$|async ; let i = index">
+          <th scope="row">{{iTT.id}}</th>
+          <td>{{iTT.duration}}</td>
+     
+      
+    
+          
+          <th>
+            <button type="button" class="btn-sm btn-primary"  (click)="modalEdit(iTT)" data-bs-toggle="modal"
+             data-bs-target="#staticBackdrop"><i class="fa fa-pencil-square-o"></i></button> 
+             &nbsp;&nbsp;  
+                <button class="btn-sm btn-danger" (click)="delete(iTT)"><i class="fa fa-trash"></i></button>
+              </th>
+          
+          
+        </tr>
+   
+      </tbody>
+    </table>
+    </div>  
+
+   

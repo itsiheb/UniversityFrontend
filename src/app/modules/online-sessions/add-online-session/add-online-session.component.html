@@ -1,0 +1,16 @@
+<form>
+    <div class="mb-3">
+        <label for="duration" class="form-label">Online Session Duration</label>
+        <input type="text" class="form-control" [(ngModel)]="duration" name="duration">
+    </div>
+ 
+ 
+    <button (click)="addOnlineSession()" *ngIf="onlineSession.id==0" class="btn btn-primary  float-right">
+        Add
+    </button>
+ 
+    <button (click)="updateOnlineSession()" *ngIf="onlineSession.id!=0" class="btn btn-primary">
+        Update
+    </button>
+    
+ </form>

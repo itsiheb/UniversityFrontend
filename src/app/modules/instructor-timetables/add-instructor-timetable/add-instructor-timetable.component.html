@@ -1,0 +1,19 @@
+<form>
+    <div class="mb-3">
+        <label for="duration" class="form-label">Duration</label>
+        <input type="text" class="form-control" [(ngModel)]="duration" name="duration">
+    </div>
+ 
+
+ 
+
+ 
+    <button (click)="addItt()" *ngIf="iTT.id==0" class="btn btn-primary  float-right">
+        Add
+    </button>
+ 
+    <button (click)="updateItt()" *ngIf="iTT.id!=0" class="btn btn-primary">
+        Update
+    </button>
+    
+ </form>

@@ -30,7 +30,7 @@ export class CoursesComponent implements OnInit {
     }
     this.modalTitle = "Add Course";
     this.activateAddEditCourseComponent = true;
-    this.courses_table$ = this.courseService.getcourses();
+    
   }
 
   modalEdit(item:any) {
@@ -38,11 +38,12 @@ export class CoursesComponent implements OnInit {
     this.course = item;
     this.modalTitle = "Edit Course";
     this.activateAddEditCourseComponent = true;
-    this.courses_table$ = this.courseService.getcourses();
+    
     
   }
   modalClose() {
     this.activateAddEditCourseComponent = false;
+    this.courses_table$ = this.courseService.getcourses();
   }
   delete(item:any) {
     if(confirm(`Are you sure you want to delete : ${item.name}`)) {
@@ -55,12 +56,13 @@ export class CoursesComponent implements OnInit {
       if(showDeleteSuccess) {
         showDeleteSuccess.style.display = "block";
       }
+      this.courses_table$ = this.courseService.getcourses();
       setTimeout(function() {
         if(showDeleteSuccess) {
           showDeleteSuccess.style.display = "none"
         }
       }, 4000);
-      this.courses_table$ = this.courseService.getcourses();
+      
       })
     }
   }

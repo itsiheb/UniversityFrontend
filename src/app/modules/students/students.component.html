@@ -1,1 +1,97 @@
-<p>students works!</p>
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">{{modalTitle}}</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                   (click)="modalClose()" id="add-edit-modal-close"></button>
+              </div>
+              <div class="modal-body">
+                  <app-add-student [student]="student" *ngIf="activateAddEditStudentComponent">
+                  </app-add-student>
+              </div>
+          </div>
+      </div>
+      </div>
+      
+      <!--end  Modal -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h3 class="h2 mb-0 text-gray-800">&nbsp;&nbsp;Manage Students </h3>
+        </div>
+
+            <div class="card">
+         
+              <div>
+                <div class="alert alert-success" role="alert" id="delete-success-alert">
+                  Student successfully deleted!
+              </div>
+
+             <div class="alert alert-success" role="alert" id="add-success-alert">
+                Student successfully added!
+             </div>
+             
+             <div class="alert alert-success" role="alert" id="update-success-alert">
+                Student successfully updated!
+             </div>
+             
+            
+            </div>
+           
+             </div>
+            <div class="card-header">
+              <button type="button" class="btn-sm btn-primary float-left" (click)="modalAdd()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Add Student
+              </button>
+             </div>
+    
+           
+             
+           
+    
+            <div class="card-body">
+        <table class="table  table-striped " id="Students">
+      <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">firstName</th>
+            <th scope="col">lastName</th>
+            <th scope="col">email</th>
+            <th scope="col">phone</th>
+            <th scope="col">adress</th>
+          <th scope="col">Actions</th>
+         
+    
+         
+          
+        </tr>
+      </thead>
+      <tbody>
+       
+        <tr *ngFor="let student of students_table$|async ; let i = index">
+          <th scope="row">{{student.id}}</th>
+          <td>{{student.firstName}}</td>
+          <td>{{student.lastName}}</td>
+          <td>{{student.email}}</td>
+          <td>{{student.phone}}</td>
+          <td>{{student.adress}}</td>
+    
+          
+          <th>
+            <button type="button" class="btn-sm btn-primary"  (click)="modalEdit(student)" data-bs-toggle="modal"
+             data-bs-target="#staticBackdrop"><i class="fa fa-pencil-square-o"></i></button> 
+             &nbsp;&nbsp;  
+                <button class="btn-sm btn-danger" (click)="delete(student)"><i class="fa fa-trash"></i></button>
+              </th>
+          
+          
+        </tr>
+   
+      </tbody>
+    </table>
+    </div>  
+
+   
