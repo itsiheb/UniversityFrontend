@@ -13,6 +13,7 @@ export class AddStudentComponent implements OnInit {
   firstName: string = "";
   lastName : string = "";
   email : string = "";
+  classid : number = 0;
   adress : string = "";
   phone : string = "";
 
@@ -34,7 +35,8 @@ export class AddStudentComponent implements OnInit {
         lastName:this.lastName,
         email:this.email,
         adress:this.adress,
-        phone:this.phone
+        phone:this.phone,
+        classid : 0
       }
       this.StudentService.addStudent(student).subscribe(res => {
         var closeModalBtn = document.getElementById('add-edit-modal-close');
@@ -62,7 +64,8 @@ export class AddStudentComponent implements OnInit {
         lastName:this.lastName,
         email:this.email,
         adress:this.adress,
-        phone:this.phone
+        phone:this.phone,
+        classid : 0
       }
       var id:number = this.id;
       this.StudentService.updateStudent(id,student).subscribe(res => {

@@ -1,3 +1,4 @@
+import { ClassService } from './../../service/class.service';
 import { StudentService } from './../../service/student.service';
 import { Component, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -10,14 +11,28 @@ import { Observable } from 'rxjs';
 export class StudentsComponent implements OnInit {
   
   students_table$:Observable<any[]> | undefined ;
+ /* classes_list$:Observable<any[]> | undefined ;
+  classes_list:any=[];
+  classesMap:Map<number,string>= new Map();*/
 
-  constructor(private studentService:StudentService ) { }
+  constructor(private studentService:StudentService//,private ClassService:ClassService 
+  ) { }
 
 
   ngOnInit(): void {
 
     this.students_table$ = this.studentService.getStudents();
+   // this.classes_list$ = this.ClassService.getClasses();
   }
+
+ /* refreshClassesMap(){
+    this.ClassService.getClasses().subscribe(data=>{
+      this.classes_list = data;
+      for(let i =0; i<data.length;i++){
+        this.classesMap.set(this.classes_list[i].id,this.classes_list[i].name);
+      }
+    })
+  }*/
   modalTitle:string = '';
   activateAddEditStudentComponent:boolean = false;
   student:any;
