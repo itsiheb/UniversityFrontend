@@ -10,29 +10,31 @@ import { Observable } from 'rxjs';
 })
 export class StudentsComponent implements OnInit {
   
-  students_table$:Observable<any[]> | undefined ;
- /* classes_list$:Observable<any[]> | undefined ;
+  students_table$!:Observable<any[]>  ;
+  classes_list$!:Observable<any[]>  ;
   classes_list:any=[];
-  classesMap:Map<number,string>= new Map();*/
+  classesMap:Map<number,string>= new Map();
 
-  constructor(private studentService:StudentService//,private ClassService:ClassService 
+  constructor(private studentService:StudentService,private ClassService:ClassService 
   ) { }
 
 
   ngOnInit(): void {
 
     this.students_table$ = this.studentService.getStudents();
-   // this.classes_list$ = this.ClassService.getClasses();
+    console.log(this.students_table$);
+     this.classes_list$ = this.ClassService.getClasses();
+     this.refreshClassesMap();
   }
 
- /* refreshClassesMap(){
+  refreshClassesMap(){
     this.ClassService.getClasses().subscribe(data=>{
       this.classes_list = data;
       for(let i =0; i<data.length;i++){
         this.classesMap.set(this.classes_list[i].id,this.classes_list[i].name);
       }
     })
-  }*/
+  }
   modalTitle:string = '';
   activateAddEditStudentComponent:boolean = false;
   student:any;

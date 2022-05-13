@@ -16,11 +16,11 @@ export class StudentService {
   getStudents(){
     return this.http.get<any>(this.studentApiUrl +'/findAllStudents');
   }
-  addStudent(data:any){
-    return this.http.post(this.studentApiUrl + '/addStudent', data);
+  addStudent(class_id:number,data:any){
+    return this.http.post(this.studentApiUrl + `/addStudentWithClass/${class_id}`, data);
   }
-  updateStudent(id:number,data:any){
-    return this.http.put(this.studentApiUrl + `/updateStudent/${id}`,data);
+  updateStudent(class_id:number,id:number,data:any){
+    return this.http.put(this.studentApiUrl + `/updateStudentWithClass/${class_id}/${id}`,data);
   }
 
   deleteStudent(id:number){

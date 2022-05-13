@@ -11,6 +11,9 @@ export class ClassService {
 
   constructor(private http: HttpClient) { }
 
+  getClass(id:number){
+    return this.http.get<any>(this.classApiUrl + `/findClass/${id}`);
+  }
   getClasses(){
     return this.http.get<any>(this.classApiUrl +'/getAllClasses');
   }
