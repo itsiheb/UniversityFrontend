@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomePageComponent } from './home-modules/home-page/home-page.component';
 import { DetailsComponent } from './home-modules/details/details.component';
 import { GetToClassComponent } from './home-modules/get-to-class/get-to-class.component';
+import { PaymentsComponent } from './modules/payments/payments.component';
+import { ForwardEmailsComponent } from './modules/forward-emails/forward-emails.component';
 
 
 
@@ -20,6 +22,8 @@ import { GetToClassComponent } from './home-modules/get-to-class/get-to-class.co
     HomePageComponent,
     DetailsComponent,
     GetToClassComponent,
+    PaymentsComponent,
+    ForwardEmailsComponent,
 
   ],
   imports: [
