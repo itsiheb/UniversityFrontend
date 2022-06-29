@@ -12,6 +12,10 @@ import { DetailsComponent } from './home-modules/details/details.component';
 import { GetToClassComponent } from './home-modules/get-to-class/get-to-class.component';
 import { PaymentsComponent } from './modules/payments/payments.component';
 import { ForwardEmailsComponent } from './modules/forward-emails/forward-emails.component';
+import { UploadFileComponent } from './modules/upload-file/upload-file.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import {ButtonModule} from 'primeng/button';
 
 
 
@@ -24,6 +28,8 @@ import { ForwardEmailsComponent } from './modules/forward-emails/forward-emails.
     GetToClassComponent,
     PaymentsComponent,
     ForwardEmailsComponent,
+    UploadFileComponent,
+ 
 
   ],
   imports: [
@@ -31,7 +37,10 @@ import { ForwardEmailsComponent } from './modules/forward-emails/forward-emails.
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
-    RouterModule
+    RouterModule,
+    MatCardModule,
+    MatIconModule, 
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
