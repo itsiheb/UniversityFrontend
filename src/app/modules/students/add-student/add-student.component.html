@@ -24,11 +24,18 @@
     <input type="text" class="form-control" [(ngModel)]="adress" name="adress">
  </div>
  
+
+ <div class="mb-3">
+    <label for="current_class_id" class="form-label">Class</label>
+    <select class="form-control" name="current_class_id" id="current_class_id" [(ngModel)]="current_class_id"  (change)="selectClass($event)">
+      <option *ngFor="let class of classes_list$|async" [value]="class.id">{{class.name}}</option>
+    </select>
+  </div>
     <button (click)="addStudent()" *ngIf="student.id==0" class="btn btn-primary  float-right">
         Add
     </button>
  
-    <button (click)="updateStudent()" *ngIf="student.id!=0" class="btn btn-primary">
+    <button (click)="updateStudent()" *ngIf="student.id!=0" class="btn btn-primary float-right">
         Update
     </button>
     

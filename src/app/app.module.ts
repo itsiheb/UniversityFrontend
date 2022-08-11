@@ -7,6 +7,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomePageComponent } from './home-modules/home-page/home-page.component';
+import { DetailsComponent } from './home-modules/details/details.component';
+import { GetToClassComponent } from './home-modules/get-to-class/get-to-class.component';
+import { PaymentsComponent } from './modules/payments/payments.component';
+import { ForwardEmailsComponent } from './modules/forward-emails/forward-emails.component';
+import { UploadFileComponent } from './modules/upload-file/upload-file.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import {ButtonModule} from 'primeng/button';
 
 
 
@@ -14,6 +23,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
+    HomePageComponent,
+    DetailsComponent,
+    GetToClassComponent,
+    PaymentsComponent,
+    ForwardEmailsComponent,
+    UploadFileComponent,
+ 
 
   ],
   imports: [
@@ -21,7 +37,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
-    RouterModule
+    RouterModule,
+    MatCardModule,
+    MatIconModule, 
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

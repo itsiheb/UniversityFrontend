@@ -1,3 +1,4 @@
+import { UploadFileComponent } from './modules/upload-file/upload-file.component';
 import { ClassesComponent } from './modules/classes/classes.component';
 import { InstructorTimetablesComponent } from './modules/instructor-timetables/instructor-timetables.component';
 import { StudentTimetablesComponent } from './modules/student-timetables/student-timetables.component';
@@ -32,7 +33,9 @@ const routes: Routes = [{
       {path: 'student-timetables',
       component: StudentTimetablesComponent},
       {path: 'instructor-timetables',
-      component: InstructorTimetablesComponent}
+      component: InstructorTimetablesComponent},
+      {path: 'app-upload-file',
+      component: UploadFileComponent}
 ],
 }
 ];

@@ -62,6 +62,7 @@
             <th scope="col">email</th>
             <th scope="col">phone</th>
             <th scope="col">adress</th>
+            <th scope="col">class</th>
           <th scope="col">Actions</th>
          
     
@@ -71,13 +72,16 @@
       </thead>
       <tbody>
        
-        <tr *ngFor="let student of students_table$|async ; let i = index">
+        <tr *ngFor="let student of students_table$|async">
           <th scope="row">{{student.id}}</th>
           <td>{{student.firstName}}</td>
           <td>{{student.lastName}}</td>
           <td>{{student.email}}</td>
           <td>{{student.phone}}</td>
           <td>{{student.adress}}</td>
+          <td> {{student.current_class["name"]}}</td>
+          
+         
     
           
           <th>

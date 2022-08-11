@@ -1,5 +1,7 @@
+import { ClassService } from './../../../service/class.service';
 import { StudentService } from './../../../service/student.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-add-student',
@@ -8,15 +10,28 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AddStudentComponent implements OnInit {
 
+  student_list$!: Observable<any[]>;
+  classes_list$!: Observable<any[]>;
+
+  constructor(private StudentService :StudentService,private classService:ClassService ) { }
+
   @Input() student:any;
   id: number = 0;
   firstName: string = "";
   lastName : string = "";
   email : string = "";
+  current_class_id!: number ;
   adress : string = "";
   phone : string = "";
 
-  constructor(private StudentService :StudentService) { }
+
+  selectClass(event: Event)
+  {
+     const value = (event.target as HTMLInputElement).value;
+    if(value)
+      this.current_class_id = Number(value);
+    
+  }
 
     ngOnInit(): void {
       this.id = this.student.id;
@@ -25,6 +40,9 @@ export class AddStudentComponent implements OnInit {
       this.email = this.student.email;
       this.adress = this.student.adress;
       this.phone = this.student.phone;
+      this.current_class_id = this.student.current_class_id;
+      this.student_list$ = this.StudentService.getStudents();
+      this.classes_list$ = this.classService.getClasses();
     }
    
 
@@ -34,9 +52,9 @@ export class AddStudentComponent implements OnInit {
         lastName:this.lastName,
         email:this.email,
         adress:this.adress,
-        phone:this.phone
+        phone:this.phone,
       }
-      this.StudentService.addStudent(student).subscribe(res => {
+      this.StudentService.addStudent(this.current_class_id,student).subscribe(res => {
         var closeModalBtn = document.getElementById('add-edit-modal-close');
         if(closeModalBtn) {
           closeModalBtn.click();
@@ -62,10 +80,11 @@ export class AddStudentComponent implements OnInit {
         lastName:this.lastName,
         email:this.email,
         adress:this.adress,
-        phone:this.phone
+        phone:this.phone,
       }
       var id:number = this.id;
-      this.StudentService.updateStudent(id,student).subscribe(res => {
+      
+      this.StudentService.updateStudent(this.current_class_id,id,student).subscribe(res => {
         var closeModalBtn = document.getElementById('add-edit-modal-close');
         if(closeModalBtn) {
           closeModalBtn.click();
@@ -77,7 +96,7 @@ export class AddStudentComponent implements OnInit {
         }
         setTimeout(function() {
           if(showUpdateSuccess) {
-            showUpdateSuccess.style.display = "none"
+            showUpdateSuccess.style.display = "none";
           }
         }, 4000);
         })

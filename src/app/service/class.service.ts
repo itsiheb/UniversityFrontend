@@ -11,8 +11,14 @@ export class ClassService {
 
   constructor(private http: HttpClient) { }
 
+  getClass(id:number){
+    return this.http.get<any>(this.classApiUrl + `/findClass/${id}`);
+  }
   getClasses(){
     return this.http.get<any>(this.classApiUrl +'/getAllClasses');
+  }
+  getStudentsFromClass(id:number){
+    return this.http.get<any>(this.classApiUrl +`/getAllStudentsFromClass/${id}`);
   }
   addClass(data:any){
     return this.http.post(this.classApiUrl + '/addClass', data);
